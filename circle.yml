@@ -1,6 +1,6 @@
 deployment:
   staging:
-    branch: User-Login
+    branch: master
     commands:
       -git push git@heroku.com:serene-shelf-12411.git $CIRCLE_SHA1:refs/heads/master
       -heroku run rails db:migrate --app serene-shelf-12411
