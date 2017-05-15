@@ -1,0 +1,5 @@
+deployment:
+  staging:
+    branch: User-Login
+    heroku:
+      appnamme: serene-shelf-12411
