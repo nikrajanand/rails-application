@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :is_logged_in, only: [:edit, :update, :destroy]
+  before_action :is_logged_in, except: [:signup, :create]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -15,6 +16,11 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @user = User.new
+  end
+
+  # GET /users/signup
+  def signup
     @user = User.new
   end
 
